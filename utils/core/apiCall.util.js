@@ -3,7 +3,6 @@ const axios = require('axios');
 const fetchData = async(url) =>{
     try {
 
-        console.log(url)
         const response = await axios.get(url);
         const data = response.data
         return data

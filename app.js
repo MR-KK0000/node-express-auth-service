@@ -32,6 +32,4 @@ app.use('/', router)
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs, { explorer: true }));
 
 
-app.listen(port,() =>{
-    console.log(`listen start app port: ${port}`)
-})
+module.exports = app

@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const { responseFuncSuccess ,responseFuncError }  = require('./core/response.util')
 
 const signToken = async(payload, key, isExpire, expireTime) =>{
     try {
@@ -8,10 +9,9 @@ const signToken = async(payload, key, isExpire, expireTime) =>{
         }
 
         const token = await jwt.sign(payload, key, option)
-        return token
+        return responseFuncSuccess(token)
     } catch (error) {
-        console.log(error)
-        return ""
+        return responseFuncError(error)
     }
 }
 
